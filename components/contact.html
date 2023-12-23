@@ -1,0 +1,77 @@
+<section id="section-3" class="contact">
+  <header class="section-header contact__header">
+    <h2 class="contact__title">📧 ¡Contacto!</h2>
+    <hr />
+  </header>
+  <div class="section-body contact__body" id="section-3-body">
+    <form
+      action="https://formsubmit.co/jeremiastolay1714@gmail.com"
+      method="post"
+      class="contact__form form"
+    >
+      <!-- FormSubmit config -->
+      <input type="hidden" name="_captcha" value="false" />
+      <input
+        type="hidden"
+        name="_next"
+        value="https://gustavotolay.github.io/thanks.html"
+      />
+
+      <!-- User inputs -->
+      <div class="form__item">
+        <label for="input-1" class="form__label">E-mail</label>
+        <input
+          name="email"
+          class="form__input"
+          id="input-1"
+          type="email"
+          required
+        />
+      </div>
+
+      <div class="form__item">
+        <label for="input-3" class="form__label">Número (opcional)</label>
+        <input
+          name="numero"
+          class="form__input"
+          id="input-3"
+          type="text"
+          pattern="[0-9 ]+"
+        />
+      </div>
+
+      <div class="form__item">
+        <label for="input-2" class="form__label">Asunto</label>
+        <input
+          name="asunto"
+          class="form__input"
+          id="input-2"
+          type="text"
+          required
+        />
+      </div>
+
+      <div class="form__item">
+        <label for="input-4" class="form__label">Mensaje</label>
+        <textarea
+          name="mensaje"
+          class="form__input"
+          id="input-4"
+          cols="10"
+          rows="7"
+          required
+        ></textarea>
+      </div>
+
+      <div class="form__button-div">
+        <input
+          name="button"
+          class="form__button"
+          id="form-button"
+          type="submit"
+          value="Enviar &#128640;"
+        />
+      </div>
+    </form>
+  </div>
+</section>

@@ -5,40 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans&family=Alike&family=Inter:wght@400;500&family=Montserrat:wght@400;500;600&display=swap");
+    </style>
+
+    <!-- Page styles -->
+    <style>
+      .thanks {
+        background: linear-gradient(180deg, #011442 0%, #00218b 100%);
+
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        height: 80vh;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+      }
+
+      .thanks__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .thanks__title {
+        color: var(--text-white, #fff);
+        font-family: Montserrat;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 40px; /* 142.857% */
+      }
+
+      .thanks__subtitle {
+        color: var(--text-white, #fff);
+        font-family: Alike;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 40px; /* 200% */
+      }
+
+      .thanks__link {
+        color: #ff0075;
+        text-align: center;
+        font-family: Montserrat;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 70px; /* 350% */
+      }
     </style>
     
-    <link rel="stylesheet" href="/assets/style-2741f40b.css">
+    <link rel="stylesheet" href="/assets/style-c55863ba.css">
   </head>
   <body>
-    <nav>
-      <div class="navbar-icons-div">
-        <a href="https://github.com/GustavoTolay"
-          ><img class="navbar-image" src="/github2.png"
-        /></a>
-        <a href="https://wa.me/543884320054"
-          ><img class="navbar-image" src="/whatsapp2.png"
-        /></a>
-        <a href="https://m.me/franco.tolay.332"
-          ><img class="navbar-image" src="/messenger2.png"
-        /></a>
-      </div>
-      <div class="navbar-title-div">
-        <h5>Gustavo Tolay</h5>
-        <h3>Desarrollador Fullstack</h3>
-      </div>
-    </nav>
+    <nav class="navbar"></nav>
+
     <main>
-      <section class="thanks" id="section-1">
-        <div>
-          <div class="image">
-            <img src="/Check-Background-PNG.png" height="100px" alt="" />
-          </div>
-          <div class="thanks-text">Mensaje enviado con éxito.</div>
-          <div class="thanks-text">¡Gracias por contactar!</div>
-          <div class="thanks-text"><a href="/">Volver</a></div>
+      <section class="thanks">
+        <div class="image">
+          <img src="/Check-Background-PNG.png" height="100px" alt="" />
+        </div>
+        <div class="thanks__text">
+          <span class="thanks-text thanks__title">Mensaje enviado</span>
+          <span class="thanks-text thanks__subtitle"
+            >¡Gracias por contactarme!</span
+          >
+          <span class=""><a class="thanks__link" href="/">Volver</a></span>
         </div>
       </section>
     </main>
+
+    <!-- Load navbar -->
+    <script>
+      const navbar = document.getElementsByClassName("navbar")[0];
+      fetch("/components/navbar.html")
+        .then((res) => res.text())
+        .then((text) => (navbar.outerHTML = text))
+        .then(loadPage);
+
+      function loadPage() {
+        document.getElementsByClassName("link-list__item")[0].style.display =
+          "none";
+        document.getElementsByClassName("link-list__item")[1].style.display =
+          "none";
+        document.getElementsByClassName("link-list__item")[2].style.display =
+          "none";
+      }
+    </script>
   </body>
 </html>
